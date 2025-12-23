@@ -787,3 +787,81 @@ textarea {
     font-size: 1.8rem;
   }
 }
+/* Improved Fixed Header Responsiveness - No Overlap, Clean Mobile */
+body {
+  padding-top: 100px; /* Default space for fixed header on desktop */
+}
+
+header {
+  padding: 15px 5%;
+  transition: padding 0.3s ease;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.logo svg {
+  height: 80px;
+  transition: height 0.3s ease;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 1024px) {
+  body {
+    padding-top: 90px;
+  }
+  header {
+    padding: 12px 5%;
+  }
+  .logo svg {
+    height: 70px;
+  }
+  .nav {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 80px; /* Less space on small screens */
+  }
+  header {
+    padding: 10px 5%;
+    background: rgba(6, 9, 18, 0.95); /* Slightly more solid on mobile */
+  }
+  .logo svg {
+    height: 60px;
+  }
+  .nav {
+    gap: 15px;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .lang-switcher {
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-top: 70px;
+  }
+  .logo svg {
+    height: 55px;
+  }
+  .nav a {
+    font-size: 0.9rem;
+  }
+}
