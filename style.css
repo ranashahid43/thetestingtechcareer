@@ -865,3 +865,68 @@ header {
     font-size: 0.9rem;
   }
 }
+/* Fixed Header - Mobile-Friendly Size & No Overlap */
+body {
+  padding-top: 100px; /* Default for desktop - space below fixed header */
+}
+
+header {
+  padding: 15px 5%;
+  height: auto;
+  min-height: 80px;
+  transition: all 0.3s ease;
+}
+
+.logo svg {
+  height: 70px;
+  transition: height 0.3s ease;
+}
+
+.nav {
+  gap: 25px;
+}
+
+/* Mobile - Shrink Header */
+@media (max-width: 768px) {
+  body {
+    padding-top: 80px; /* Less space on mobile */
+  }
+
+  header {
+    padding: 10px 5%;
+    min-height: 70px;
+  }
+
+  .logo svg {
+    height: 60px;
+  }
+
+  .nav {
+    gap: 15px;
+    font-size: 0.9rem;
+  }
+
+  .lang-switcher button {
+    padding: 5px 10px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-top: 70px;
+  }
+
+  .logo svg {
+    height: 55px;
+  }
+
+  header {
+    padding: 8px 5%;
+  }
+
+  .nav {
+    gap: 12px;
+    font-size: 0.85rem;
+  }
+}
