@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Testing Tech | We Test. You Trust.</title>
+  <meta name="description" content="Premium QA and software testing solutions for flawless digital experiences." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <svg width="80" height="80" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#2da9ff" />
+            <stop offset="100%" stop-color="#7ed3ff" />
+          </linearGradient>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+        <path d="M50 15 L85 35 L85 65 L50 85 L15 65 L15 35 Z" fill="none" stroke="url(#grad)" stroke-width="8" filter="url(#glow)"/>
+        <circle cx="50" cy="50" r="25" fill="none" stroke="url(#grad)" stroke-width="5"/>
+        <text x="50" y="60" font-family="Poppins, sans-serif" font-size="32" font-weight="900" fill="url(#grad)" text-anchor="middle" filter="url(#glow)">TTT</text>
+        <path d="M30 50 L45 65 L70 35" stroke="url(#grad)" stroke-width="6" fill="none" stroke-linecap="round" filter="url(#glow)"/>
+      </svg>
+      <div class="logo-text">
+        <div class="subtitle" style="background: linear-gradient(135deg, #2da9ff, #7ed3ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">The Testing Tech</div>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <div class="dropdown">
+        <a href="#">About Us <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+        <div class="dropdown-content">
+          <a href="about.html">Our Story</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </div>
+      <a href="careers.html">Careers</a>
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="it">IT</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1 data-en="Protagonists of <span>Digital Quality</span><br>We Test. You Trust." data-it="Protagonisti della <span>Qualità Digitale</span><br>Testiamo. Ti Fidiamo.">
+      Protagonists of <span>Digital Quality</span><br>We Test. You Trust.
+    </h1>
+    <p data-en="Premium QA and software testing solutions leveraging expertise and innovation to ensure flawless digital experiences." data-it="Soluzioni premium di QA e testing software che sfruttano competenza e innovazione per garantire esperienze digitali perfette.">
+      Premium QA and software testing solutions leveraging expertise and innovation to ensure flawless digital experiences.
+    </p>
+    <div class="hero-btns">
+      <a href="contact.html" class="btn learn-more-btn" data-en="Request Consultation" data-it="Richiedi Consulenza">Request Consultation</a>
+      <a href="services.html" class="btn learn-more-btn" data-en="Explore Services" data-it="Esplora Servizi">Explore Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <h2 data-en="Our Testing Services" data-it="I Nostri Servizi di Testing">Our Testing Services</h2>
+  <div class="services">
+    <div class="glass service">
+      <i class="fa-solid fa-bug"></i>
+      <h3 data-en="Manual Testing" data-it="Testing Manuale">Manual Testing</h3>
+      <p data-en="Expert human insight for real-world scenarios." data-it="Insight umano esperto per scenari reali.">Expert human insight for real-world scenarios.</p>
+      <a href="services.html#manual" class="btn learn-more-btn">
+        <span data-en="Learn More" data-it="Scopri di Più">Learn More</span>
+      </a>
+    </div>
+
+    <div class="glass service">
+      <i class="fa-solid fa-robot"></i>
+      <h3 data-en="Automation Testing" data-it="Testing Automatizzato">Automation Testing</h3>
+      <p data-en="Efficiency with scalable frameworks." data-it="Efficienza con framework scalabili.">Efficiency with scalable frameworks.</p>
+      <a href="services.html#automation" class="btn learn-more-btn">
+        <span data-en="Learn More" data-it="Scopri di Più">Learn More</span>
+      </a>
+    </div>
+
+    <div class="glass service">
+      <i class="fa-solid fa-mobile-screen"></i>
+      <h3 data-en="Web & Mobile Testing" data-it="Testing Web & Mobile">Web & Mobile Testing</h3>
+      <p data-en="Flawless experience across platforms." data-it="Esperienza perfetta su tutte le piattaforme.">Flawless experience across platforms.</p>
+      <a href="services.html#mobile-web" class="btn learn-more-btn">
+        <span data-en="Learn More" data-it="Scopri di Più">Learn More</span>
+      </a>
+    </div>
+
+    <div class="glass service">
+      <i class="fa-solid fa-brain"></i>
+      <h3 data-en="AI & ML Testing" data-it="Testing AI & ML">AI & ML Testing</h3>
+      <p data-en="Intelligent validation for accuracy." data-it="Validazione intelligente per accuratezza.">Intelligent validation for accuracy.</p>
+      <a href="services.html#ai-ml" class="btn learn-more-btn">
+        <span data-en="Learn More" data-it="Scopri di Più">Learn More</span>
+      </a>
+    </div>
+
+    <div class="glass service">
+      <i class="fa-solid fa-shield-halved"></i>
+      <h3 data-en="Security Testing" data-it="Testing di Sicurezza">Security Testing</h3>
+      <p data-en="Robust protection against threats." data-it="Protezione robusta contro minacce.">Robust protection against threats.</p>
+      <a href="services.html#security" class="btn learn-more-btn">
+        <span data-en="Learn More" data-it="Scopri di Più">Learn More</span>
+      </a>
+    </div>
+
+    <div class="glass service">
+      <i class="fa-solid fa-gauge-high"></i>
+      <h3 data-en="Performance Testing" data-it="Testing delle Prestazioni">Performance Testing</h3>
+      <p data-en="Scalable reliability under load." data-it="Affidabilità scalabile sotto carico.">Scalable reliability under load.</p>
+      <a href="services.html#performance" class="btn learn-more-btn">
+        <span data-en="Learn More" data-it="Scopri di Più">Learn More</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-column">
+      <a href="index.html" class="logo">
+        <svg width="80" height="80" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#2da9ff" />
+              <stop offset="100%" stop-color="#7ed3ff" />
+            </linearGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <path d="M50 15 L85 35 L85 65 L50 85 L15 65 L15 35 Z" fill="none" stroke="url(#grad)" stroke-width="8" filter="url(#glow)"/>
+          <circle cx="50" cy="50" r="25" fill="none" stroke="url(#grad)" stroke-width="5"/>
+          <text x="50" y="60" font-family="Poppins, sans-serif" font-size="32" font-weight="900" fill="url(#grad)" text-anchor="middle" filter="url(#glow)">TTT</text>
+          <path d="M30 50 L45 65 L70 35" stroke="url(#grad)" stroke-width="6" fill="none" stroke-linecap="round" filter="url(#glow)"/>
+        </svg>
+        <div class="logo-text">
+          <div class="subtitle" style="background: linear-gradient(135deg, #2da9ff, #7ed3ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">The Testing Tech</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="footer-column">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="careers.html">Careers</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services.html#manual">Manual Testing</a></li>
+        <li><a href="services.html#automation">Automation Testing</a></li>
+        <li><a href="services.html#mobile-web">Web & Mobile Testing</a></li>
+        <li><a href="services.html#ai-ml">AI & ML Testing</a></li>
+        <li><a href="services.html#security">Security Testing</a></li>
+        <li><a href="services.html#performance">Performance Testing</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>Contact</h4>
+      <p style="font-size: 0.8rem; color: var(--text-dim);">info@thetestingtech.com</p>
+      <div class="social-links" style="margin-top: 15px; display: flex; gap: 10px;">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <p style="text-align: center; margin-top: 40px; font-size: 0.7rem; color: var(--text-dim);">© 2025 The Testing Tech. All rights reserved.</p>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const langBtns = document.querySelectorAll('.lang-btn');
+    let currentLang = 'en';
+
+    const updateLanguage = (lang) => {
+      document.querySelectorAll('[data-en]').forEach(el => {
+        const text = el.getAttribute(`data-${lang}`);
+        if (text !== null && text !== '') {
+          if (el.tagName === 'H1' || el.tagName === 'H2' || el.tagName === 'P' || el.tagName === 'SPAN') {
+            el.innerHTML = text;  // Use innerHTML for <span> and <br> tags
+          } else if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+            el.placeholder = text;
+          } else if (el.tagName === 'BUTTON' || el.tagName === 'A') {
+            const span = el.querySelector('span');
+            if (span) span.textContent = text;
+            else el.textContent = text;
+          } else {
+            el.textContent = text;
+          }
+        }
+      });
+
+      langBtns.forEach(btn => btn.classList.toggle('active', btn.getAttribute('data-lang') === lang));
+    };
+
+    langBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const newLang = btn.getAttribute('data-lang');
+        if (newLang !== currentLang) {
+          currentLang = newLang;
+          updateLanguage(newLang);
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Services | The Testing Tech</title>
+  <meta name="description" content="Detailed QA Services: Manual, Automation, Security, and Performance Testing." />
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  
+  <style>
+    /* Specific styling for the Services Detail Page - kept as you had, just cleaned up */
+    .services-container {
+      padding: 120px 5% 80px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .page-title {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+    .page-title h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    .service-detailed-block {
+      margin-bottom: 60px;
+      padding: 40px;
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      transition: transform 0.3s ease;
+    }
+    .service-detailed-block:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary);
+    }
+    .service-detailed-icon {
+      font-size: 3.5rem;
+      color: var(--primary);
+      min-width: 80px;
+    }
+    .service-detailed-info h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+    .service-detailed-info p {
+      color: var(--text-dim);
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+    .feature-item {
+      font-size: 0.9rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .feature-item i {
+      color: var(--primary);
+      font-size: 0.8rem;
+    }
+    @media (max-width: 768px) {
+      .service-detailed-block { 
+        flex-direction: column; 
+        text-align: center; 
+      }
+      .service-detailed-icon { 
+        margin: 0 auto 20px; 
+      }
+      .feature-item { 
+        justify-content: center; 
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER - Identical to index.html -->
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <svg width="80" height="80" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#2da9ff" />
+            <stop offset="100%" stop-color="#7ed3ff" />
+          </linearGradient>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+        <path d="M50 15 L85 35 L85 65 L50 85 L15 65 L15 35 Z" fill="none" stroke="url(#grad)" stroke-width="8" filter="url(#glow)"/>
+        <circle cx="50" cy="50" r="25" fill="none" stroke="url(#grad)" stroke-width="5"/>
+        <text x="50" y="60" font-family="Poppins, sans-serif" font-size="32" font-weight="900" fill="url(#grad)" text-anchor="middle" filter="url(#glow)">TTT</text>
+        <path d="M30 50 L45 65 L70 35" stroke="url(#grad)" stroke-width="6" fill="none" stroke-linecap="round" filter="url(#glow)"/>
+      </svg>
+      <div class="logo-text">
+        <div class="subtitle" style="background: linear-gradient(135deg, #2da9ff, #7ed3ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">The Testing Tech</div>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <div class="dropdown">
+        <a href="#">About Us <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+        <div class="dropdown-content">
+          <a href="about.html">Our Story</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </div>
+      <a href="careers.html">Careers</a>
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="it">IT</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- MAIN SERVICES CONTENT -->
+<main class="services-container">
+  <div class="page-title">
+    <h1 data-en="Specialized <span>QA Solutions</span>" data-it="Soluzioni <span>QA Specializzate</span>">Specialized <span>QA Solutions</span></h1>
+    <p style="color: var(--text-dim);" data-en="Deep technical expertise across the entire testing lifecycle." data-it="Profonda competenza tecnica in tutto il ciclo di vita del testing.">Deep technical expertise across the entire testing lifecycle.</p>
+  </div>
+
+  <!-- Manual Testing -->
+  <div class="glass service-detailed-block" id="manual">
+    <div class="service-detailed-icon"><i class="fa-solid fa-bug"></i></div>
+    <div class="service-detailed-info">
+      <h2 data-en="Manual Testing" data-it="Testing Manuale">Manual Testing</h2>
+      <p data-en="Expert human insight to detect complex usability, logic, and real-user issues that automated tools often miss." data-it="Insight umano esperto per rilevare problemi complessi di usabilità, logica e utente reale che gli strumenti automatizzati spesso non rilevano.">Expert human insight to detect complex usability, logic, and real-user issues that automated tools often miss.</p>
+      <div class="feature-grid">
+        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Functional Testing</div>
+        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Regression Testing</div>
+        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Exploratory Testing</div>
+        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Usability & UX Testing</div>
+        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Compatibility Testing</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Automation Testing -->
+  <div class="glass service-detailed-block" id="automation">
+    <div class="service-detailed-icon"><i class="fa-solid fa-robot"></i></div>
+    <div class="service-detailed-info">
+      <h2 data-en="Automation Testing" data-it="Testing Automatizzato">Automation Testing</h2>
+      <p data-en="Accelerate delivery with robust, maintainable automated test suites using industry-leading tools." data-it="Accelera le consegne con suite di test automatizzati robuste e mantenibili utilizzando strumenti leader del settore.">Accelerate delivery with robust, maintainable automated test suites using industry-leading tools.</p>
+      <div class="feature-grid">
+        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> UI & API Automation</div>
+        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Framework Design & Implementation</div>
+        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> CI/CD Pipeline Integration</div>
+        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> BDD & Data-Driven Approaches</div>
+        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Cross-Browser & Parallel Execution</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Web & Mobile Testing -->
+  <div class="glass service-detailed-block" id="mobile-web">
+    <div class="service-detailed-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+    <div class="service-detailed-info">
+      <h2 data-en="Web & Mobile Testing" data-it="Testing Web & Mobile">Web & Mobile Testing</h2>
+      <p data-en="Ensure flawless user experience across all devices, browsers, and operating systems." data-it="Garantisci un'esperienza utente perfetta su tutti i dispositivi, browser e sistemi operativi.">Ensure flawless user experience across all devices, browsers, and operating systems.</p>
+      <div class="feature-grid">
+        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Cross-Platform Compatibility</div>
+        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Responsive Design Validation</div>
+        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Native & Hybrid App Testing</div>
+        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Real Device & Emulator Testing</div>
+        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Gesture & Touch Validation</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI & ML Testing -->
+  <div class="glass service-detailed-block" id="ai-ml">
+    <div class="service-detailed-icon"><i class="fa-solid fa-brain"></i></div>
+    <div class="service-detailed-info">
+      <h2 data-en="AI & ML Testing" data-it="Testing AI & ML">AI & ML Testing</h2>
+      <p data-en="Specialized testing for artificial intelligence and machine learning models to ensure accuracy, fairness, and reliability." data-it="Testing specializzato per modelli di intelligenza artificiale e machine learning per garantire accuratezza, equità e affidabilità.">Specialized testing for artificial intelligence and machine learning models to ensure accuracy, fairness, and reliability.</p>
+      <div class="feature-grid">
+        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Model Accuracy & Bias Testing</div>
+        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Data Quality & Drift Monitoring</div>
+        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Adversarial & Robustness Testing</div>
+        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Explainability Validation</div>
+        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Performance Under Edge Cases</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Security Testing -->
+  <div class="glass service-detailed-block" id="security">
+    <div class="service-detailed-icon"><i class="fa-solid fa-shield-halved"></i></div>
+    <div class="service-detailed-info">
+      <h2 data-en="Security Testing" data-it="Testing di Sicurezza">Security Testing</h2>
+      <p data-en="Proactively identify and mitigate vulnerabilities to protect your applications and sensitive data." data-it="Identifica e mitiga proattivamente le vulnerabilità per proteggere le tue applicazioni e i dati sensibili.">Proactively identify and mitigate vulnerabilities to protect your applications and sensitive data.</p>
+      <div class="feature-grid">
+        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Penetration Testing</div>
+        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Vulnerability Assessment</div>
+        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> OWASP Top 10 Compliance</div>
+        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> API & Network Security</div>
+        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Security Audit & Reporting</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Performance Testing -->
+  <div class="glass service-detailed-block" id="performance">
+    <div class="service-detailed-icon"><i class="fa-solid fa-gauge-high"></i></div>
+    <div class="service-detailed-info">
+      <h2 data-en="Performance Testing" data-it="Testing delle Prestazioni">Performance Testing</h2>
+      <p data-en="Validate scalability, speed, and stability under real-world load conditions." data-it="Valida scalabilità, velocità e stabilità sotto condizioni di carico reali.">Validate scalability, speed, and stability under real-world load conditions.</p>
+      <div class="feature-grid">
+        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Load & Stress Testing</div>
+        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Scalability & Endurance Testing</div>
+        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Response Time Optimization</div>
+        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Bottleneck Identification</div>
+        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Real-User Monitoring (RUM)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Request Quote Button (same style as Learn More) -->
+  <div style="text-align: center; margin-top: 80px; margin-bottom: 40px;">
+    <a href="contact.html" class="btn learn-more-btn" data-en="Request a Detailed Quote" data-it="Richiedi un Preventivo Dettagliato">Request a Detailed Quote</a>
+  </div>
+</main>
+
+<!-- FOOTER - Identical logo and style as header -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-column">
+      <a href="index.html" class="logo">
+        <svg width="80" height="80" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#2da9ff" />
+              <stop offset="100%" stop-color="#7ed3ff" />
+            </linearGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <path d="M50 15 L85 35 L85 65 L50 85 L15 65 L15 35 Z" fill="none" stroke="url(#grad)" stroke-width="8" filter="url(#glow)"/>
+          <circle cx="50" cy="50" r="25" fill="none" stroke="url(#grad)" stroke-width="5"/>
+          <text x="50" y="60" font-family="Poppins, sans-serif" font-size="32" font-weight="900" fill="url(#grad)" text-anchor="middle" filter="url(#glow)">TTT</text>
+          <path d="M30 50 L45 65 L70 35" stroke="url(#grad)" stroke-width="6" fill="none" stroke-linecap="round" filter="url(#glow)"/>
+        </svg>
+        <div class="logo-text">
+          <div class="subtitle" style="background: linear-gradient(135deg, #2da9ff, #7ed3ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">The Testing Tech</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="footer-column">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="careers.html">Careers</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services.html#manual">Manual Testing</a></li>
+        <li><a href="services.html#automation">Automation Testing</a></li>
+        <li><a href="services.html#mobile-web">Web & Mobile Testing</a></li>
+        <li><a href="services.html#ai-ml">AI & ML Testing</a></li>
+        <li><a href="services.html#security">Security Testing</a></li>
+        <li><a href="services.html#performance">Performance Testing</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>Contact</h4>
+      <p style="font-size: 0.8rem; color: var(--text-dim);">info@thetestingtech.com</p>
+      <div class="social-links" style="margin-top: 15px; display: flex; gap: 10px;">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <p style="text-align: center; margin-top: 40px; font-size: 0.7rem; color: var(--text-dim);">© 2025 The Testing Tech. All rights reserved.</p>
+</footer>
+
+<script>
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang;
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.innerHTML = el.getAttribute(`data-${lang}`);
+      });
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      localStorage.setItem('preferredLang', lang);
+    });
+  });
+
+  window.onload = () => {
+      const savedLang = localStorage.getItem('preferredLang') || 'en';
+      const targetBtn = document.querySelector(`.lang-btn[data-lang="${savedLang}"]`);
+      if (targetBtn) targetBtn.click();
+  };
+</script>
+</body>
+</html>

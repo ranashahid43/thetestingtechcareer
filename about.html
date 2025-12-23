@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us | The Testing Tech</title>
+  <meta name="description" content="Meet the leaders driving innovation in software quality assurance at The Testing Tech." />
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  
+  <style>
+    /* Custom About Page Styles - Cleaned & Aligned */
+    .about-section {
+      padding: 120px 5% 80px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .mission-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-bottom: 100px;
+    }
+    .chairman-container {
+      display: flex;
+      gap: 60px;
+      align-items: center;
+      background: var(--glass);
+      backdrop-filter: blur(15px);
+      padding: 60px;
+      border-radius: 40px;
+      border: 1px solid var(--glass-border);
+      margin-bottom: 120px;
+    }
+    .chairman-image {
+      flex-shrink: 0;
+      width: 300px;
+      height: 380px;
+      border-radius: 30px;
+      background-size: cover;
+      background-position: 50% 30%;  /* Centers face perfectly */
+      border: 2px solid var(--primary);
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+    }
+    .team-card {
+      text-align: center;
+      padding: 40px;
+      transition: transform 0.3s ease;
+    }
+    .team-card:hover {
+      transform: translateY(-10px);
+    }
+    .member-photo {
+      width: 150px;
+      height: 150px;
+      background-size: cover;
+      background-position: center 20%;  /* Moves face down slightly for better centering */
+      background-repeat: no-repeat;
+      border-radius: 50%;
+      border: 3px solid var(--primary);
+      margin: 0 auto 25px;
+    }
+    @media (max-width: 968px) {
+      .chairman-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+      }
+      .chairman-image {
+        width: 220px;
+        height: 280px;
+        margin: 0 auto 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER - Identical to index & services -->
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <svg width="80" height="80" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#2da9ff" />
+            <stop offset="100%" stop-color="#7ed3ff" />
+          </linearGradient>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+        <path d="M50 15 L85 35 L85 65 L50 85 L15 65 L15 35 Z" fill="none" stroke="url(#grad)" stroke-width="8" filter="url(#glow)"/>
+        <circle cx="50" cy="50" r="25" fill="none" stroke="url(#grad)" stroke-width="5"/>
+        <text x="50" y="60" font-family="Poppins, sans-serif" font-size="32" font-weight="900" fill="url(#grad)" text-anchor="middle" filter="url(#glow)">TTT</text>
+        <path d="M30 50 L45 65 L70 35" stroke="url(#grad)" stroke-width="6" fill="none" stroke-linecap="round" filter="url(#glow)"/>
+      </svg>
+      <div class="logo-text">
+        <div class="subtitle" style="background: linear-gradient(135deg, #2da9ff, #7ed3ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">The Testing Tech</div>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <div class="dropdown">
+        <a href="#">About Us <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+        <div class="dropdown-content">
+          <a href="about.html">Our Story</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </div>
+      <a href="careers.html">Careers</a>
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="it">IT</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero" style="min-height: 50vh;">
+  <div class="hero-content">
+    <h1 data-en="Built on <span>Integrity</span> & Innovation" data-it="Costruito su <span>Integrità</span> e Innovazione">Built on <span>Integrity</span> & Innovation</h1>
+    <p data-en="Pioneering digital excellence through precision testing and a passion for perfection." data-it="Pionieri dell'eccellenza digitale attraverso test di precisione e passione per la perfezione.">Pioneering digital excellence through precision testing and a passion for perfection.</p>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<main class="about-section">
+  <div class="mission-grid">
+    <div class="glass" style="padding: 40px;">
+      <i class="fa-solid fa-rocket" style="font-size: 2rem; color: var(--primary); margin-bottom: 20px;"></i>
+      <h3 style="margin-bottom: 15px;" data-en="Our Mission" data-it="La Nostra Missione">Our Mission</h3>
+      <p style="color: var(--text-dim); font-size: 0.95rem;" data-en="To empower businesses by ensuring their software is resilient, secure, and user-centric through cutting-edge QA methodologies." data-it="Responsabilizzare le aziende garantendo che il loro software sia resiliente, sicuro e incentrato sull'utente attraverso metodologie QA all'avanguardia.">To empower businesses by ensuring their software is resilient, secure, and user-centric through cutting-edge QA methodologies.</p>
+    </div>
+    <div class="glass" style="padding: 40px;">
+      <i class="fa-solid fa-eye" style="font-size: 2rem; color: var(--primary); margin-bottom: 20px;"></i>
+      <h3 style="margin-bottom: 15px;" data-en="Our Vision" data-it="La Nostra Visione">Our Vision</h3>
+      <p style="color: var(--text-dim); font-size: 0.95rem;" data-en="To be the global benchmark for digital trust, where every interaction is seamless and every deployment is flawless." data-it="Essere il punto di riferimento globale per la fiducia digitale, dove ogni interazione è fluida e ogni implementazione è perfetta.">To be the global benchmark for digital trust, where every interaction is seamless and every deployment is flawless.</p>
+    </div>
+  </div>
+
+  <!-- Chairman Message -->
+  <div class="chairman-container">
+    <div class="chairman-image" style="background-image: url('https://i.ibb.co/jkB4rZfK/Shahid-Iqbal.png');"></div>
+    <div>
+      <h2 style="font-size: 2rem; margin-bottom: 20px;" data-en="Message from the Chairman" data-it="Messaggio del Presidente">Message from the Chairman</h2>
+      <p style="font-style: italic; font-size: 1.2rem; line-height: 1.8; color: #fff; margin-bottom: 25px;" data-en="&quot;In today's digital world, quality is the foundation of trust. At The Testing Tech, we are committed to ensuring every software is flawless, secure, and ready for the future.&quot;" data-it="&quot;Nel mondo digitale di oggi, la qualità è la base della fiducia. In The Testing Tech, ci impegniamo a garantire che ogni software sia perfetto, sicuro e pronto per il futuro.&quot;">"In today's digital world, quality is the foundation of trust. At The Testing Tech, we are committed to ensuring every software is flawless, secure, and ready for the future."</p>
+      <h4 style="color: var(--primary);">Shahid Iqbal</h4>
+      <p style="font-size: 0.9rem; color: var(--text-dim);" data-en="Chairman & Founder" data-it="Presidente e Fondatore">Chairman & Founder</p>
+    </div>
+  </div>
+
+  <!-- Team Section -->
+  <div id="team">
+    <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 60px;" data-en="Our Leadership" data-it="La Nostra Leadership">Our Leadership</h2>
+    <div class="team-grid">
+      <div class="glass team-card">
+        <div class="member-photo" style="background-image: url('https://i.ibb.co/7t7SDrmB/Gemini-Generated-Image-8rc2qp8rc2qp8rc2.png');"></div>
+        <h3 style="margin-bottom: 5px;">Jagan Pareet</h3>
+        <p style="color: var(--primary); margin-bottom: 15px; font-weight: 600;" data-en="CEO & CTO" data-it="CEO & CTO">CEO & CTO</p>
+        <p style="font-size: 0.9rem; color: var(--text-dim); margin-bottom: 20px;" data-en="Strategic leader driving technological innovation and business growth." data-it="Leader strategico che guida l'innovazione tecnologica e la crescita aziendale.">Strategic leader driving technological innovation and business growth.</p>
+        <a href="https://linkedin.com/in/jagan-pareet" target="_blank" style="color: #fff; font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <div class="glass team-card">
+        <div class="member-photo" style="background-image: url('https://i.ibb.co/FqnfNDg5/Ali-Mohin-Raza.png');"></div>
+        <h3 style="margin-bottom: 5px;">Ali Mohsin Raza</h3>
+        <p style="color: var(--primary); margin-bottom: 15px; font-weight: 600;" data-en="CFO & CMO" data-it="CFO & CMO">CFO & CMO</p>
+        <p style="font-size: 0.9rem; color: var(--text-dim); margin-bottom: 20px;" data-en="Financial and marketing expert ensuring sustainable market leadership." data-it="Esperto finanziario e di marketing che garantisce una leadership di mercato sostenibile.">Financial and marketing expert ensuring sustainable market leadership.</p>
+        <a href="https://linkedin.com/in/ali-mohsin-raza" target="_blank" style="color: #fff; font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER - Identical to header logo -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-column">
+      <a href="index.html" class="logo">
+        <svg width="80" height="80" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#2da9ff" />
+              <stop offset="100%" stop-color="#7ed3ff" />
+            </linearGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <path d="M50 15 L85 35 L85 65 L50 85 L15 65 L15 35 Z" fill="none" stroke="url(#grad)" stroke-width="8" filter="url(#glow)"/>
+          <circle cx="50" cy="50" r="25" fill="none" stroke="url(#grad)" stroke-width="5"/>
+          <text x="50" y="60" font-family="Poppins, sans-serif" font-size="32" font-weight="900" fill="url(#grad)" text-anchor="middle" filter="url(#glow)">TTT</text>
+          <path d="M30 50 L45 65 L70 35" stroke="url(#grad)" stroke-width="6" fill="none" stroke-linecap="round" filter="url(#glow)"/>
+        </svg>
+        <div class="logo-text">
+          <div class="subtitle" style="background: linear-gradient(135deg, #2da9ff, #7ed3ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">The Testing Tech</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="footer-column">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="careers.html">Careers</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services.html#manual">Manual Testing</a></li>
+        <li><a href="services.html#automation">Automation Testing</a></li>
+        <li><a href="services.html#mobile-web">Web & Mobile Testing</a></li>
+        <li><a href="services.html#ai-ml">AI & ML Testing</a></li>
+        <li><a href="services.html#security">Security Testing</a></li>
+        <li><a href="services.html#performance">Performance Testing</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>Contact</h4>
+      <p style="font-size: 0.8rem; color: var(--text-dim);">info@thetestingtech.com</p>
+      <div class="social-links" style="margin-top: 15px; display: flex; gap: 10px;">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <p style="text-align: center; margin-top: 40px; font-size: 0.7rem; color: var(--text-dim);">© 2025 The Testing Tech. All rights reserved.</p>
+</footer>
+
+<script>
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang;
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.innerHTML = el.getAttribute(`data-${lang}`);
+      });
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      localStorage.setItem('preferredLang', lang);
+    });
+  });
+
+  window.onload = () => {
+      const savedLang = localStorage.getItem('preferredLang') || 'en';
+      const targetBtn = document.querySelector(`.lang-btn[data-lang="${savedLang}"]`);
+      if (targetBtn) targetBtn.click();
+  };
+</script>
+</body>
+</html>

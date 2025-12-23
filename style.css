@@ -1,0 +1,789 @@
+/* =====================================================================
+   THE TESTING TECH - Professional Style.css (Single File - Fully Responsive)
+   Last Updated: Fully responsive grids, hero buttons spacing, careers form fix
+   ===================================================================== */
+
+/* ================ ROOT VARIABLES (Global Colors & Settings) ================ */
+:root {
+  --bg-dark: #060912;
+  --primary: #00CCFF;
+  --secondary: #7ed3ff;
+  --text-main: #ffffff;
+  --text-dim: rgba(255, 255, 255, 0.7);
+  --glass: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --transition: all 0.3s ease;
+}
+
+/* ================ GLOBAL RESET & BASE ================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ================ HEADER ================ */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 5%;
+  background: rgba(6, 9, 18, 0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--glass-border);
+  z-index: 1000;
+}
+
+.header-inner {
+  max-width: 1400px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+}
+
+.logo svg {
+  flex-shrink: 0;
+  height: 80px;
+}
+
+/* ================ NAVIGATION ================ */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav a {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  padding: 5px 0;
+  transition: var(--transition);
+}
+
+.nav a:hover {
+  color: var(--primary);
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(6, 9, 18, 0.95);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  min-width: 180px;
+  padding: 10px 0;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 20px;
+  color: var(--text-dim);
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  color: var(--primary);
+  background: rgba(255,255,255,0.05);
+}
+
+/* Language Switcher */
+.lang-switcher {
+  display: flex;
+  gap: 8px;
+}
+
+.lang-btn {
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--text-dim);
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.lang-btn.active,
+.lang-btn:hover {
+  background: var(--primary);
+  color: #000;
+}
+
+/* ================ FOOTER ================ */
+footer {
+  background: #03050a;
+  border-top: 1px solid var(--glass-border);
+  padding: 60px 5% 30px;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.footer-column h4 {
+  color: var(--primary);
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column li {
+  margin-bottom: 12px;
+}
+
+.footer-column a {
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer-column a:hover {
+  color: var(--primary);
+}
+
+.footer-logo svg {
+  height: 70px;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+/* ================ HERO SECTION ================ */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 5% 60px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: var(--text-dim);
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+.hero-btns {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.hero-btns .learn-more-btn {
+  padding: 14px 35px;
+  font-size: 1.1rem;
+  min-width: 200px;
+  text-align: center;
+}
+
+/* ================ SERVICES SECTION (Home) ================ */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 60px 5%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.glass:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary);
+}
+
+.glass i {
+  font-size: 3rem;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+/* Move "Learn More" buttons slightly down in service cards */
+.services .btn.learn-more-btn {
+  margin-top: 25px;
+}
+
+/* ================ BUTTONS & INTERACTIVE ELEMENTS ================ */
+.learn-more-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: var(--primary);
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 204, 255, 0.3);
+  cursor: pointer;
+}
+
+.learn-more-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 204, 255, 0.5);
+  background: #00b3e6;
+}
+
+/* ================ RESPONSIVE DESIGN (Full Mobile & Tablet Support) ================ */
+@media (max-width: 1024px) {
+  .services,
+  .mission-grid,
+  .team-grid,
+  .why-join-grid,
+  .feature-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  /* Header */
+  .header-inner {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 5%;
+  }
+  .logo svg {
+    height: 70px;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 60vh;
+    padding: 100px 5% 40px;
+  }
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+  .hero-btns {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .hero-btns .learn-more-btn {
+    width: 100%;
+    padding: 14px 20px;
+  }
+
+  /* All Grids - Stack to single column */
+  .services,
+  .mission-grid,
+  .team-grid,
+  .why-join-grid,
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Flex sections - Stack vertically */
+  .service-detailed-block,
+  .chairman-container,
+  .contact-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+  .service-detailed-icon,
+  .chairman-image {
+    margin: 0 auto 30px;
+  }
+
+  /* Forms & Careers */
+  .grid-2,
+  .upload-box {
+    grid-template-columns: 1fr;
+  }
+  .form-section {
+    padding: 40px 15px;
+  }
+  .privacy-group {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* Footer */
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+  .footer-logo svg {
+    height: 65px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .page-title h1 {
+    font-size: 2.5rem;
+  }
+  .services .glass {
+    padding: 30px;
+  }
+  .form-group-title {
+    font-size: 1.3rem;
+  }
+}
+
+/* Careers Page - Perfect Alignment & Responsiveness */
+.careers-container {
+  padding: 120px 5% 80px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.why-join-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.form-section {
+  padding: 50px 40px;
+  border-radius: 40px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+}
+
+.form-field {
+  margin-bottom: 25px;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--text-dim);
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.05);
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.upload-box {
+  background: rgba(255,255,255,0.03);
+  border: 2px dashed var(--glass-border);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.privacy-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin: 30px 0;
+}
+
+.privacy-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+}
+
+.privacy-group label {
+  margin: 0;
+  cursor: pointer;
+}
+
+/* Careers Page - Compact & Aligned on Mobile */
+.careers-container {
+  padding: 100px 5% 60px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.why-join-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.form-section {
+  padding: 40px 30px;
+  border-radius: 30px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+}
+
+.form-field {
+  margin-bottom: 20px;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: var(--text-dim);
+  font-size: 0.95rem;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.05);
+  color: var(--text-main);
+  font-size: 0.95rem;
+}
+
+textarea {
+  min-height: 120px;
+}
+
+.upload-box {
+  background: rgba(255,255,255,0.03);
+  border: 2px dashed var(--glass-border);
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.upload-box label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: var(--text-dim);
+}
+
+.privacy-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin: 25px 0;
+}
+
+.privacy-group input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--primary);
+}
+
+.privacy-group label {
+  margin: 0;
+  cursor: pointer;
+}
+
+/* Careers Page - Keep Original Style but Make Fully Responsive */
+.careers-container {
+  padding: 120px 5% 80px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.why-join-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.form-section {
+  padding: 60px;
+  border-radius: 40px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+}
+
+.form-group-title {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: var(--primary);
+  border-bottom: 1px solid var(--glass-border);
+  padding-bottom: 10px;
+}
+
+.upload-box {
+  background: rgba(255,255,255,0.03);
+  border: 2px dashed var(--glass-border);
+  padding: 20px;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.upload-box:hover {
+  border-color: var(--primary);
+  background: rgba(45, 169, 255, 0.05);
+}
+
+input[type="file"] {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+
+.privacy-group {
+  margin: 40px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text-dim);
+}
+
+.privacy-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+}
+
+.privacy-group label {
+  margin: 0;
+  cursor: pointer;
+}
+
+/* Responsive - Stack & Compact on Mobile */
+@media (max-width: 1024px) {
+  .form-section {
+    padding: 50px 30px;
+  }
+}
+
+/* Careers - Compact & Aligned Spontaneous Application Container */
+.form-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 50px 40px;
+  border-radius: 40px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field label {
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--text-dim);
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.05);
+  color: var(--text-main);
+  font-size: 1rem;
+}
+
+textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.upload-box {
+  padding: 18px;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.privacy-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  margin: 30px 0;
+}
+
+@media (max-width: 768px) {
+  .form-section {
+    padding: 40px 25px;
+    max-width: 100%;
+  }
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .upload-box {
+    padding: 15px;
+  }
+  .privacy-group {
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 0.85rem;
+  }
+  .btn.learn-more-btn {
+    width: 100%;
+    padding: 16px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-section {
+    padding: 30px 20px;
+  }
+  .form-group-title {
+    font-size: 1.3rem;
+  }
+  .form-section h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Legal Pages (Privacy Policy, Terms, etc.) */
+.legal-container {
+  padding: 140px 5% 100px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.legal-content {
+  background: var(--glass);
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 60px 40px;
+}
+
+.legal-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.legal-content h2 {
+  font-size: 2rem;
+  margin: 50px 0 20px;
+  color: var(--primary);
+}
+
+.legal-content p, .legal-content ul {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-dim);
+  margin-bottom: 20px;
+}
+
+.legal-content ul {
+  list-style: disc;
+  padding-left: 40px;
+}
+
+.legal-content a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .legal-container {
+    padding: 100px 5% 60px;
+  }
+  .legal-content {
+    padding: 40px 20px;
+  }
+  .legal-content h1 {
+    font-size: 2.5rem;
+  }
+  .legal-content h2 {
+    font-size: 1.8rem;
+  }
+}

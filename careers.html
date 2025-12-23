@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Careers | The Testing Tech</title>
+  <meta name="description" content="Join the elite team at The Testing Tech. Submit your spontaneous application for QA and testing roles." />
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  
+  <style>
+    /* Careers Page Specific Enhancements - Fully Responsive */
+    .careers-container {
+      padding: 120px 5% 80px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .why-join-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-bottom: 80px;
+    }
+    .form-section {
+      padding: 60px;
+      border-radius: 40px;
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+    }
+    .form-group-title {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+      color: var(--primary);
+      border-bottom: 1px solid var(--glass-border);
+      padding-bottom: 10px;
+    }
+    .upload-box {
+      background: rgba(255,255,255,0.03);
+      border: 2px dashed var(--glass-border);
+      padding: 20px;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+      margin-bottom: 20px;
+    }
+    .upload-box:hover {
+      border-color: var(--primary);
+      background: rgba(45, 169, 255, 0.05);
+    }
+    input[type="file"] {
+      color: var(--text-dim);
+      font-size: 0.85rem;
+    }
+    .privacy-group {
+      margin: 40px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: var(--text-dim);
+    }
+    .privacy-group input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--primary);
+    }
+    .privacy-group label {
+      margin: 0;
+      cursor: pointer;
+    }
+
+    /* Responsive Fixes - Keep original style but stack on mobile */
+    @media (max-width: 1024px) {
+      .form-section {
+        padding: 50px 30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .careers-container {
+        padding: 80px 5% 60px;
+      }
+      .why-join-grid {
+        grid-template-columns: 1fr; /* Stack cards */
+      }
+      .form-section {
+        padding: 40px 20px;
+      }
+      .grid-2 {
+        grid-template-columns: 1fr; /* Stack name/email, etc. */
+        gap: 25px;
+      }
+      .upload-box {
+        padding: 15px;
+      }
+      .privacy-group {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .btn.learn-more-btn {
+        width: 100%;
+        padding: 16px 30px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .form-group-title {
+        font-size: 1.3rem;
+      }
+      .form-section h2 {
+        font-size: 1.8rem;
+      }
+      .privacy-group {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER - Identical to all other pages -->
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <svg width="80" height="80" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#2da9ff" />
+            <stop offset="100%" stop-color="#7ed3ff" />
+          </linearGradient>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+        <path d="M50 15 L85 35 L85 65 L50 85 L15 65 L15 35 Z" fill="none" stroke="url(#grad)" stroke-width="8" filter="url(#glow)"/>
+        <circle cx="50" cy="50" r="25" fill="none" stroke="url(#grad)" stroke-width="5"/>
+        <text x="50" y="60" font-family="Poppins, sans-serif" font-size="32" font-weight="900" fill="url(#grad)" text-anchor="middle" filter="url(#glow)">TTT</text>
+        <path d="M30 50 L45 65 L70 35" stroke="url(#grad)" stroke-width="6" fill="none" stroke-linecap="round" filter="url(#glow)"/>
+      </svg>
+      <div class="logo-text">
+        <div class="subtitle" style="background: linear-gradient(135deg, #2da9ff, #7ed3ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">The Testing Tech</div>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <div class="dropdown">
+        <a href="#">About Us <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+        <div class="dropdown-content">
+          <a href="about.html">Our Story</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </div>
+      <a href="careers.html">Careers</a>
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="it">IT</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero" style="min-height: 45vh;">
+  <div class="hero-content">
+    <h1 data-en="Join Our <span>Talent Network</span>" data-it="Unisciti al Nostro <span>Talento</span>">Join Our <span>Talent Network</span></h1>
+    <p data-en="We are always looking for the best QA engineers and automation specialists to join our journey." data-it="Siamo sempre alla ricerca dei migliori ingegneri QA e specialisti in automazione.">We are always looking for the best QA engineers and automation specialists to join our journey.</p>
+  </div>
+</section>
+
+<!-- MAIN CAREERS CONTENT -->
+<main class="careers-container">
+  <div class="why-join-grid">
+    <div class="glass" style="text-align: center; padding: 30px;">
+      <i class="fa-solid fa-laptop-code" style="font-size: 2rem; color: var(--primary); margin-bottom: 15px;"></i>
+      <h4 data-en="Top Tech" data-it="Top Tech">Top Tech</h4>
+      <p style="font-size: 0.85rem; color: var(--text-dim);" data-en="Work with the latest QA frameworks and AI tools." data-it="Lavora con i più recenti framework QA e strumenti AI.">Work with the latest QA frameworks and AI tools.</p>
+    </div>
+    <div class="glass" style="text-align: center; padding: 30px;">
+      <i class="fa-solid fa-earth-americas" style="font-size: 2rem; color: var(--primary); margin-bottom: 15px;"></i>
+      <h4 data-en="Global Impact" data-it="Impatto Globale">Global Impact</h4>
+      <p style="font-size: 0.85rem; color: var(--text-dim);" data-en="Solve quality challenges for international clients." data-it="Risolvi sfide di qualità per clienti internazionali.">Solve quality challenges for international clients.</p>
+    </div>
+    <div class="glass" style="text-align: center; padding: 30px;">
+      <i class="fa-solid fa-rocket" style="font-size: 2rem; color: var(--primary); margin-bottom: 15px;"></i>
+      <h4 data-en="Rapid Growth" data-it="Crescita Rapida">Rapid Growth</h4>
+      <p style="font-size: 0.85rem; color: var(--text-dim);" data-en="Accelerate your career in a high-performance team." data-it="Accelera la tua carriera in un team ad alte prestazioni.">Accelerate your career in a high-performance team.</p>
+    </div>
+  </div>
+
+  <div class="glass" style="padding: 20px; text-align: center; margin-bottom: 40px;">
+    <p data-en="Sorry, currently there are no vacant positions available. Come back soon!" data-it="Spiacenti, al momento non ci sono posizioni vacanti disponibili. Torna presto!">Sorry, currently there are no vacant positions available. Come back soon!</p>
+  </div>
+
+  <div class="glass form-section" style="max-width: 800px; margin: 0 auto; padding: 50px 40px;">
+  <h2 style="text-align: center; font-size: 2.2rem; margin-bottom: 40px;" data-en="Spontaneous Application" data-it="Candidatura Spontanea">Spontaneous Application</h2>
+  
+  <form action="careers.php" method="POST" enctype="multipart/form-data">
+    <h3 class="form-group-title" data-en="Personal Information" data-it="Informazioni Personali">Personal Information</h3>
+    <div class="grid-2">
+      <div class="form-field">
+        <label data-en="First Name" data-it="Nome">First Name</label>
+        <input type="text" name="first_name" required>
+      </div>
+      <div class="form-field">
+        <label data-en="Last Name" data-it="Cognome">Last Name</label>
+        <input type="text" name="last_name" required>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="form-field">
+        <label data-en="Email Address" data-it="Indirizzo Email">Email Address</label>
+        <input type="email" name="email" required>
+      </div>
+      <div class="form-field">
+        <label data-en="Phone Number" data-it="Numero di Telefono">Phone Number</label>
+        <input type="tel" name="phone" required>
+      </div>
+    </div>
+
+    <h3 class="form-group-title" style="margin-top: 40px;" data-en="Role & Experience" data-it="Ruolo ed Esperienza">Role & Experience</h3>
+    <div class="form-field">
+      <label data-en="Position Interested In" data-it="Posizione di Interesse">Position Interested In</label>
+      <input type="text" name="position" required placeholder data-en="e.g. Senior Automation Engineer" data-it="es. Ingegnere Senior Automazione">
+    </div>
+
+    <div class="form-field">
+      <label data-en="Cover Letter / Brief Intro" data-it="Lettera di Presentazione">Cover Letter / Brief Intro</label>
+      <textarea name="cover_letter" rows="5" required placeholder data-en="Why do you want to join The Testing Tech?" data-it="Perché vuoi unirti a The Testing Tech?"></textarea>
+    </div>
+
+    <h3 class="form-group-title" data-en="Documents & Media" data-it="Documenti e Media">Documents & Media</h3>
+    <div class="upload-box">
+      <label data-en="Upload CV (PDF required)" data-it="Carica CV (PDF richiesto)">Upload CV (PDF required)</label>
+      <input type="file" name="cv" accept=".pdf" required>
+    </div>
+
+    <div class="grid-2">
+      <div class="upload-box">
+        <label data-en="Portfolio (Optional)" data-it="Portfolio (Opzionale)">Portfolio (Optional)</label>
+        <input type="file" name="portfolio" accept=".pdf,.zip">
+      </div>
+      <div class="upload-box">
+        <label data-en="Short Video Intro (Optional)" data-it="Video Intro (Opzionale)">Short Video Intro (Optional)</label>
+        <input type="file" name="video" accept=".mp4,.mov">
+      </div>
+    </div>
+
+    <div class="privacy-group" style="margin: 30px 0; font-size: 0.9rem;">
+      <input type="checkbox" name="agree" required>
+      <label style="margin: 0;">
+        <span data-en="I agree to the processing of personal data." data-it="Accetto il trattamento dei dati personali.">I agree to the processing of personal data.</span>
+        <a href="privacy.html" target="_blank" style="color: var(--primary); text-decoration: underline;">(Read Policy)</a>
+      </label>
+    </div>
+
+    <button type="submit" class="btn learn-more-btn" style="width: 100%; padding: 18px; font-size: 1.1rem;">
+      <span data-en="Submit My Application" data-it="Invia la mia Candidatura">Submit My Application</span>
+    </button>
+  </form>
+</div>
+</main>
+
+<!-- FOOTER - Identical to all other pages -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-column">
+      <a href="index.html" class="logo">
+        <svg width="80" height="80" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#2da9ff" />
+              <stop offset="100%" stop-color="#7ed3ff" />
+            </linearGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <path d="M50 15 L85 35 L85 65 L50 85 L15 65 L15 35 Z" fill="none" stroke="url(#grad)" stroke-width="8" filter="url(#glow)"/>
+          <circle cx="50" cy="50" r="25" fill="none" stroke="url(#grad)" stroke-width="5"/>
+          <text x="50" y="60" font-family="Poppins, sans-serif" font-size="32" font-weight="900" fill="url(#grad)" text-anchor="middle" filter="url(#glow)">TTT</text>
+          <path d="M30 50 L45 65 L70 35" stroke="url(#grad)" stroke-width="6" fill="none" stroke-linecap="round" filter="url(#glow)"/>
+        </svg>
+        <div class="logo-text">
+          <div class="subtitle" style="background: linear-gradient(135deg, #2da9ff, #7ed3ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">The Testing Tech</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="footer-column">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="careers.html">Careers</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services.html#manual">Manual Testing</a></li>
+        <li><a href="services.html#automation">Automation Testing</a></li>
+        <li><a href="services.html#mobile-web">Web & Mobile Testing</a></li>
+        <li><a href="services.html#ai-ml">AI & ML Testing</a></li>
+        <li><a href="services.html#security">Security Testing</a></li>
+        <li><a href="services.html#performance">Performance Testing</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>Contact</h4>
+      <p style="font-size: 0.8rem; color: var(--text-dim);">info@thetestingtech.com</p>
+      <div class="social-links" style="margin-top: 15px; display: flex; gap: 10px;">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <p style="text-align: center; margin-top: 40px; font-size: 0.7rem; color: var(--text-dim);">© 2025 The Testing Tech. All rights reserved.</p>
+</footer>
+
+<script>
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang;
+      document.querySelectorAll('[data-en]').forEach(el => {
+        const text = el.getAttribute(`data-${lang}`);
+        if (text) {
+          if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+            el.placeholder = text;
+          } else {
+            el.innerHTML = text;
+          }
+        }
+      });
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      localStorage.setItem('preferredLang', lang);
+    });
+  });
+
+  window.onload = () => {
+      const savedLang = localStorage.getItem('preferredLang') || 'en';
+      const targetBtn = document.querySelector(`.lang-btn[data-lang="${savedLang}"]`);
+      if (targetBtn) targetBtn.click();
+  };
+</script>
+</body>
+</html>
