@@ -787,118 +787,44 @@ textarea {
     font-size: 1.8rem;
   }
 }
-/* Improved Fixed Header Responsiveness - No Overlap, Clean Mobile */
+
+
+/* Ultimate Fixed Header Fix - Perfect Mobile Spacing */
 body {
-  padding-top: 100px; /* Default space for fixed header on desktop */
+  padding-top: 90px; /* Desktop - enough space below fixed header */
 }
 
 header {
-  padding: 15px 5%;
-  transition: padding 0.3s ease;
-}
-
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.logo svg {
-  height: 80px;
-  transition: height 0.3s ease;
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-/* Mobile Adjustments */
-@media (max-width: 1024px) {
-  body {
-    padding-top: 90px;
-  }
-  header {
-    padding: 12px 5%;
-  }
-  .logo svg {
-    height: 70px;
-  }
-  .nav {
-    gap: 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  body {
-    padding-top: 80px; /* Less space on small screens */
-  }
-  header {
-    padding: 10px 5%;
-    background: rgba(6, 9, 18, 0.95); /* Slightly more solid on mobile */
-  }
-  .logo svg {
-    height: 60px;
-  }
-  .nav {
-    gap: 15px;
-    justify-content: center;
-    width: 100%;
-    margin-top: 10px;
-  }
-  .lang-switcher {
-    margin-top: 5px;
-  }
-}
-
-@media (max-width: 480px) {
-  body {
-    padding-top: 70px;
-  }
-  .logo svg {
-    height: 55px;
-  }
-  .nav a {
-    font-size: 0.9rem;
-  }
-}
-/* Fixed Header - Mobile-Friendly Size & No Overlap */
-body {
-  padding-top: 100px; /* Default for desktop - space below fixed header */
-}
-
-header {
-  padding: 15px 5%;
+  padding: 12px 5%;
   height: auto;
-  min-height: 80px;
+  min-height: 70px;
+  background: rgba(6, 9, 18, 0.95); /* Slightly more solid on mobile for clarity */
   transition: all 0.3s ease;
 }
 
 .logo svg {
-  height: 70px;
+  height: 65px;
   transition: height 0.3s ease;
 }
 
 .nav {
-  gap: 25px;
+  gap: 20px;
+  font-size: 0.95rem;
 }
 
-/* Mobile - Shrink Header */
+/* Mobile - Super Compact Header */
 @media (max-width: 768px) {
   body {
-    padding-top: 80px; /* Less space on mobile */
+    padding-top: 70px; /* Very tight - one line below header */
   }
 
   header {
-    padding: 10px 5%;
-    min-height: 70px;
+    padding: 8px 5%;
+    min-height: 60px;
   }
 
   .logo svg {
-    height: 60px;
+    height: 55px;
   }
 
   .nav {
@@ -908,25 +834,20 @@ header {
 
   .lang-switcher button {
     padding: 5px 10px;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
 }
 
 @media (max-width: 480px) {
   body {
-    padding-top: 70px;
+    padding-top: 65px; /* Even tighter on very small screens */
   }
 
   .logo svg {
-    height: 55px;
+    height: 50px;
   }
 
   header {
-    padding: 8px 5%;
-  }
-
-  .nav {
-    gap: 12px;
-    font-size: 0.85rem;
+    padding: 6px 5%;
   }
 }
